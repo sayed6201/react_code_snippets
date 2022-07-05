@@ -1,0 +1,68 @@
+===================
+global header
+==================
+
+import React from 'react'
+import Header from './Header'
+
+function Layout({children}) {
+  return (
+    <>
+        <Header/>
+        {/* childerns will get rendered if you place it on top of components in _app.js */}
+        {children}
+    </>
+  )
+}
+
+export default Layout
+
+
+
+in _app.js
+---------------
+import { useEffect, useState } from 'react'
+import Layout from '../components/Layout'
+import '../styles/globals.scss'
+
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <Layout>
+    <Component {...pageProps} />
+  </Layout>
+  )
+  
+}
+
+export default MyApp
+
+
+
+===============
+strning
+==============
+  console.log(`my posts: ${posts}`)
+
+
+
+==============
+code and components
+{} -> code
+() -> component
+<></> -> to multiple component
+==============
+<div className='col-span-1 lg:col-span-8'>
+        {
+          posts.map((post, index) => (
+            <>
+             <PostCard post={post} key={index} />
+            {
+              console.log(post)
+            }
+            </>
+           
+            // <p>{post.title}</p>
+          ))
+        }
+        </div>

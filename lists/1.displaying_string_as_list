@@ -1,0 +1,34 @@
+-------------------------------------------------
+//diplaying string as a char list:
+-------------------------------------------------
+
+render(){
+
+    const charlistvar = 
+      this.state.userInput.split('').map(
+        (chars, index) => {
+          return <CharList
+          index={index}
+          chars = {chars}
+          deleteCharClick = {() =>this.deleteCharEvent(chars, index)}
+          key = {index}
+          />
+        }
+      )
+    
+
+    return (
+      <div>
+      <EnterName
+      name= {this.state.userInput}
+      chnaged = {this.nameChangerEvent}
+      consoleClick = {() => this.consoleName(this.state.userInput)}
+      />
+        {charlistvar}
+        <Validation
+              name= {this.state.userInput}
+        />
+      </div>
+      
+    );
+  }
