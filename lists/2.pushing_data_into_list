@@ -1,0 +1,40 @@
+const pageUsersList = async (userList) => {
+    //copying the list, don't do tempList = userList, it will set up a reference and data will get changed
+        var tempList = {...userList};
+
+        if(tempList.PaginationToken === "") {
+            console.log("last page reached...")
+            // setState({ ...state, isLoading: false })
+            return;
+        }
+        try {
+            const apiData = await API.graphql({
+                query: listUsersPaging,
+                variables: {
+                    PaginationToken: userList.PaginationToken,
+                    UserPoolId: Auth.userPool.userPoolId
+                },
+                errorPolicy: "all",
+            })s
+                console.log("apiData")
+                console.log(JSON.stringify(apiData))
+
+                //pushing new data to the list
+                tempList.Users = [
+                    ...tempList.Users,
+                    ...JSON.parse(apiData.data.listUsersPaging).Users,
+                ];
+
+                // Checks for new pagingation token and updates
+                if (JSON.parse(apiData.data.listUsersPaging).PaginationToken) {
+                    tempList.PaginationToken = JSON.parse(
+                        apiData.data.listUsersPaging
+                    ).PaginationToken;
+                } else {
+                    tempList.PaginationToken = "";
+                }
+                setUserList(tempList);
+        } catch (e) {
+            console.log(e);
+        }
+    }
