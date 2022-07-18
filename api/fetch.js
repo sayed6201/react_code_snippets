@@ -19,3 +19,5 @@ GET- Fetching data with query param
   
       setMovies(data.Search);
     };
+
+
