@@ -1,0 +1,35 @@
+//-------------------------------------------------
+// === VS ==
+//-------------------------------------------------
+// in JavaScript is used for comparing two variables, 
+// but it ignores the datatype of variable. 
+// is used for comparing two variables, 
+// but this operator also checks datatype and compares two values.
+
+
+
+
+/*--------------------------------------------------------
+Conditionally displaying items, executing codes inside UI
+----------------------------------------------------------*/
+
+<View style={{ marginVertical: 5, padding: 1 }}>
+
+{
+  dateCache.length === 0 ? 
+
+  setDateCache([...dateCache, {"date": date, "time": time}]) :
+
+   (dateCache.some(v => v.date === date) ?  null : setDateCache([...dateCache, {"date": date, "time": time}]))
+}
+
+{
+    dateCache.some(v => v.date === date && v.time === time ) ? (
+        <View style={{backgroundColor: '#eee', width: '50%', alignItems:'center', alignSelf: 'center', padding: 7, borderRadius: 10, elevation:5}}>
+            {setCurrentDate(date)}
+            <Text>{date}</Text>
+        </View>
+    ): null
+}
+...
+</View>
