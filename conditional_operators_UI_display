@@ -6,6 +6,25 @@
 // is used for comparing two variables, 
 // but this operator also checks datatype and compares two values.
 
+//-------------------------------------------------
+// && operator in UI
+// myvar && execute() -> myvar has to be true to execute the function
+//-------------------------------------------------
+// if(blogs === true ) <BlogList blogs={blogs} />
+  return (
+    <div className="home">
+      {blogs && <BlogList blogs={blogs} />}
+    </div>
+  );
+  //this displays the loading message
+  return (
+    <div className="home">
+      { isPending && <div>Loading...</div> }
+      {blogs && <BlogList blogs={blogs} />}
+    </div>
+  );
+  //showing error msg
+  { error && <div>{ error }</div> }
 
 
 

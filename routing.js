@@ -1,7 +1,78 @@
+// ========================================
+// ------------------
+// install using    ||
+// ------------------
 yarn add react-router-dom
+// ========================================
 
 
 
+// ========================================
+// Routing sample from Code Ninja
+// ========================================
+import Navbar from './Navbar';
+import Home from './Home';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Create from './Create';
+import BlogDetails from './BlogDetails';
+import NotFound from './NotFound';
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          {/* <h1>Hello react world</h1> */}
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/create">
+              <Create />
+            </Route>
+            <Route path="/blogs/:id">
+              <BlogDetails />
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+// -----------------------
+// Navbar.js component
+// -----------------------
+import { Link } from "react-router-dom";
+
+const Navbar = () => {
+  return (
+    <nav className="navbar">
+      <h1>The Dojo Blog</h1>
+      <div className="links">
+        <Link to="/">Home</Link>
+        <Link to="/create" style={{ 
+          color: 'white', 
+          backgroundColor: '#f1356d',
+          borderRadius: '8px' 
+        }}>New Blog</Link>
+      </div>
+    </nav>
+  );
+}
+ 
+export default Navbar;
+
+
+// ========================================
+// Code Ninja Routing Sample
+// ========================================
 // This example shows how nested routing works. 
 // The route /topics loads the Topics component,
 //  which renders any further <Route>'s conditionally on the paths :id value.import React from "react";
@@ -92,3 +163,8 @@ function Topic() {
   let { topicId } = useParams();
   return <h3>Requested topic ID: {topicId}</h3>;
 }
+
+
+
+
+

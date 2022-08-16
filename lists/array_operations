@@ -1,4 +1,10 @@
 -------------------------------------------------
+// filtering an item 
+-------------------------------------------------
+let lists = blogs.filter((blog) => blog.author === "samir")
+
+
+-------------------------------------------------
 // checking if an item exists in an array,  a
 // and pushing into the array
 -------------------------------------------------
