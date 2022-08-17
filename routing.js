@@ -2,10 +2,14 @@
 // ------------------
 // install using    ||
 // ------------------
-yarn add react-router-dom
+      // yarn add react-router-dom
+      // yarn add react-router-dom@5
+      // yarn add react-router-dom@6
+      // * Router
+      // * Switch
+      // * Route
+      // * <Link to`="">
 // ========================================
-
-
 
 // ========================================
 // Routing sample from Code Ninja
@@ -31,6 +35,7 @@ function App() {
             <Route path="/create">
               <Create />
             </Route>
+            {/* sending parameter */}
             <Route path="/blogs/:id">
               <BlogDetails />
             </Route>
@@ -46,28 +51,75 @@ function App() {
 
 export default App;
 
-// -----------------------
-// Navbar.js component
-// -----------------------
-import { Link } from "react-router-dom";
+    // -----------------------
+    // Navbar.js component
+    // -----------------------
+    import { Link } from "react-router-dom";
 
-const Navbar = () => {
-  return (
-    <nav className="navbar">
-      <h1>The Dojo Blog</h1>
-      <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/create" style={{ 
-          color: 'white', 
-          backgroundColor: '#f1356d',
-          borderRadius: '8px' 
-        }}>New Blog</Link>
-      </div>
-    </nav>
-  );
-}
- 
-export default Navbar;
+    const Navbar = () => {
+      return (
+        <nav className="navbar">
+          <h1>The Dojo Blog</h1>
+          <div className="links">
+            <Link to="/">Home</Link>
+            <Link to="/create" style={{ 
+              color: 'white', 
+              backgroundColor: '#f1356d',
+              borderRadius: '8px' 
+            }}>New Blog</Link>
+          </div>
+        </nav>
+      );
+    }
+    
+    export default Navbar;
+
+    // -------------------------------------------------
+    // BlogDetails.js component
+    // retrieving parameter in blog detail page
+    // -------------------------------------------------
+    const BlogDetails = () => {
+      const { id } = useParams();
+      const { data: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
+    
+      return (
+        <div className="blog-details">
+          { isPending && <div>Loading...</div> }
+          { error && <div>{ error }</div> }
+          { blog && (
+            <article>
+              <h2>{ blog.title }</h2>
+              <p>Written by { blog.author }</p>
+              <div>{ blog.body }</div>
+            </article>
+          )}
+        </div>
+      );
+    }
+     
+    export default BlogDetails;
+
+    // ------------------------
+    // BlogList.js component
+    // Routing from a list
+    // ------------------------
+    import { Link } from 'react-router-dom';
+    const BlogList = ({ blogs }) => {
+      return (
+        <div className="blog-list">
+          {blogs.map(blog => (
+            <div className="blog-preview" key={blog.id} >
+              <Link to={`/blogs/${blog.id}`}>
+                <h2>{ blog.title }</h2>
+                <p>Written by { blog.author }</p>
+              </Link>
+            </div>
+          ))}
+        </div>
+      );
+    }
+    
+    export default BlogList;
 
 
 // ========================================
@@ -126,6 +178,7 @@ function About() {
 }
 
 function Topics() {
+  //getting url from parent component and adding new url from child component
   let match = useRouteMatch();
 
   return (
