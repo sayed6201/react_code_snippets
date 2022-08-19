@@ -1,4 +1,7 @@
-// distracting oobjects to vars \
+//`generating objects from vars
+const blog = { title, body, author };
+
+// distructing objects to vars \
 //you can change the name
 const { data: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
 
