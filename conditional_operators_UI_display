@@ -26,7 +26,16 @@
   //showing error msg
   { error && <div>{ error }</div> }
 
-
+  //---------------------------------------
+  //preventing counter going to negative
+  //---------------------------------------
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
 
 /*--------------------------------------------------------
 Conditionally displaying items, executing codes inside UI

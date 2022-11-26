@@ -1,4 +1,16 @@
 ==========================================================================
+Using same fucntion for multiple html component
+==========================================================================
+const handleFilters = (e) => {
+  // e.target.name -> gives you the name of the component
+  const value = e.target.value;
+  setFilters({
+    ...filters,
+    [e.target.name]: value,
+  });
+};
+
+==========================================================================
 React component for Person
 ==========================================================================
 
