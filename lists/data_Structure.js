@@ -1,5 +1,30 @@
 
 // =====================================
+// find by index
+// =====================================
+state.products[
+  state.products.findIndex((item) => item._id === action.payload.id)
+] = action.payload.product;
+
+
+// =====================================
+// push
+// adding an item to an array
+// =====================================
+state.products.push(action.payload);
+
+
+// =====================================
+// splice
+// removes item after provided index
+// =====================================
+const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+// At position 2, remove 2 items: 
+fruits.splice(2, 2);
+ " - Banana,Orange,Kiwi"
+
+
+// =====================================
 // Sorting a list pf objects
 // =====================================
 useEffect(() => {
