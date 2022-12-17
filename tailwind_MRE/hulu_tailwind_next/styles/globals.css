@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* this is applied to the body and globally */
+@layer base{
+  body {
+      @apply bg-[#0c313f] text-gray-300
+  }
+}
