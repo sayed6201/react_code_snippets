@@ -11,17 +11,23 @@
 
     // ---------------------------
     // step:1 - create slice
+    // cartRedux.js
     // ---------------------------
 
     import { createSlice } from "@reduxjs/toolkit";
 
     const cartSlice = createSlice({
+        //name of the slice
     name: "cart",
+    //states of the redux
     initialState: {
         products: [],
         quantity: 0,
         total: 0,
     },
+
+    //reducers are methods that can be called from UI  to update the state
+    //with displatch(addProducts(productObject))
     reducers: {
         addProduct: (state, action) => {
         state.quantity += 1;
@@ -31,6 +37,7 @@
     },
     });
 
+    //you have to export all the reducers 
     export const { addProduct } = cartSlice.actions;
     export default cartSlice.reducer;
 
@@ -130,9 +137,17 @@
     //updating ib button click
     const handleClick = () => {
         dispatch(
-          addProduct({ ...product, quantity, color, size })
+            addProduct({ ...product, quantity, color, size })
         );
-      };
+    };
 
+
+    // ---------------------------
+    // step:6 - filtering using useslector
+    // ---------------------------
+    const product = useSelector((state) =>
+      state.product.products.find((product) => product._id === productId)
+    );
+  
 
 

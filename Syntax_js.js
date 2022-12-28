@@ -1,3 +1,23 @@
+// ----------------------------------------
+//curried function:
+// ----------------------------------------
+  // First, examine this function with two parameters 
+
+
+  const add = (x, y) => x + y
+  // add(2, 3) //=> 5
+
+// Here it is again in curried form …
+  const add = x => y => x + y
+
+// Here is the same1 code without arrow functions …
+
+  const add = function (x) {
+    return function (y) {
+      return x + y
+    }
+  }
+
 //`generating objects from vars
 const blog = { title, body, author };
 
