@@ -26,6 +26,8 @@
   //showing error msg
   { error && <div>{ error }</div> }
 
+  type !== "lists" && (<div></div>)
+
   //---------------------------------------
   //preventing counter going to negative
   //---------------------------------------
