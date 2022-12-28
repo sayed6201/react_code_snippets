@@ -1,3 +1,5 @@
+
+
 //`generating objects from vars
 const blog = { title, body, author };
 
