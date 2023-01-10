@@ -1,0 +1,3 @@
+-pages
+    -_app.js -> contains all the global style imports , you wrap with a parent Component
+    -index.js -> the initial home page should be here , loads when https://domain/ is clicked

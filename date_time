@@ -1,6 +1,0 @@
-import moment from 'moment';
-
-
-<span>
-{moment(post.createdAt).format('MMM DD, YYYY')}
-</span>

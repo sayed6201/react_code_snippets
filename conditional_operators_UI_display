@@ -26,9 +26,24 @@
   //showing error msg
   { error && <div>{ error }</div> }
 
+<<<<<<< HEAD
 //`condition
 originalPassword != inputPassword && 
 res.status(401).json("Wrong Password");
+=======
+  type !== "lists" && (<div></div>)
+
+  //---------------------------------------
+  //preventing counter going to negative
+  //---------------------------------------
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
+>>>>>>> 035d04a4ff5809e15d4f1c3e704a6bd52dfaaad5
 
 /*--------------------------------------------------------
 Conditionally displaying items, executing codes inside UI

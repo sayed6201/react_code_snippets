@@ -11,6 +11,53 @@
       // * <Link to`="">
 // ========================================
 
+
+// ========================================
+// Routing sample from Lama Ecom
+// redirecting conditionally .. 
+// ========================================
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import { useSelector } from "react-redux";
+
+const App = () => {
+  const user = useSelector((state) => state.user.currentUser);
+  return (
+    <Router>
+      <Switch>
+        {/* exact -> has to be exaclty same, otherwise /product will load home  */}
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/products/:category">
+          <ProductList />
+        </Route>
+        <Route path="/product/:id">
+          <Product />
+        </Route>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+        <Route path="/success">
+          <Success />
+        </Route>
+        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
+        <Route path="/register">
+          {user ? <Redirect to="/" /> : <Register />}
+        </Route>
+      </Switch>
+    </Router>
+  );
+};
+
+export default App;
+
+
 // ========================================
 // Routing sample from Code Ninja
 // ========================================
@@ -184,7 +231,6 @@ function Topics() {
   return (
     <div>
       <h2>Topics</h2>
-
       <ul>
         <li>
           <Link to={`${match.url}/components`}>Components</Link>
