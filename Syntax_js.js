@@ -1,3 +1,8 @@
+
+// variable init
+let sort_by_param  = req.query.sort_by || 'date_of_creation'
+
+
 // ----------------------------------------
 //curried function:
 // ----------------------------------------
