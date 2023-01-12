@@ -6,7 +6,7 @@ let sort_by_param  = req.query.sort_by || 'date_of_creation'
 // ----------------------------------------
 //curried function:
 // ----------------------------------------
-  // First, examine this function with two parameters 
+// First, examine this function with two parameters 
 
 
   const add = (x, y) => x + y
