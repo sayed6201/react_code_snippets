@@ -1,6 +1,6 @@
 
 // ====================================================
-// SSG - Static side generation - getStaticProps ()
+// SSG - Static site generation - getStaticProps ()
 // Data+Markup(html) is sent from the server
 // During the build time the data is fetched only, 
 // so immediate update in database won't be reflected, until a new build is generated
