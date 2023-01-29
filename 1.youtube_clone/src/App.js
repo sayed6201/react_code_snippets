@@ -11,8 +11,8 @@ import { ChannelDetail, VideoDetail, SearchFeed, Navbar, Feed } from './componen
 
 
 const App = () => (
+  
   <BrowserRouter>
-
   {/* the route ui will gets pushed into this Box */}
     <Box sx={{ backgroundColor: '#000' }}>
       <Navbar />

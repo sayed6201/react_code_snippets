@@ -1,3 +1,9 @@
+
+//
+(
+<Box paddingLeft={isCollapsed ? undefined : "10%"}>
+)
+
 //splcingi array - getting limited elements form an array
 const trommedTodos = todos.splice(0,10)
 

@@ -1,4 +1,13 @@
 <>
+<Typography
+              variant="h6"
+              color={colors.grey[300]}
+              //t,r,b,l
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Data
+            </Typography>
+
 <Typography sx={{color:'white', fontSize:28, fontWeight:'bold'}}>
 Videos will diplay here
 </Typography>
