@@ -42,6 +42,7 @@ useEffect(() => {
 // Reading doc
 // =========================================
 const res = await getDoc(doc(db, "chats", combinedId));
+console.log('response from firebase', res?.data())
 
 
 // =========================================
