@@ -1,13 +1,13 @@
 // ------------------------------------------------------------------------------------
 //  string checker
 // ------------------------------------------------------------------------------------
-Empty string, undefined, null, ...
-To check for a truthy value:
+// Empty string, undefined, null, ...
+// To check for a truthy value:
 
 if (strValue) {
     // strValue was non-empty string, true, 42, Infinity, [], ...
 }
-To check for a falsy value:
+// To check for a falsy value:
 
 if (!strValue) {
     // strValue was empty string, false, 0, null, undefined, ...

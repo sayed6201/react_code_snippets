@@ -1,5 +1,8 @@
 
-//
+//soritng an array
+
+Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date)
+
 (
 <Box paddingLeft={isCollapsed ? undefined : "10%"}>
 )
