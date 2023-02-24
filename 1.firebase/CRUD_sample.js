@@ -49,7 +49,6 @@ console.log('response from firebase', res?.data())
 // creating chats and update userChats
 // adding combined chatID from 2 users ID 
 // =========================================
-
 const handleSelect = async () => {
     //check whether the group(chats in firestore) exists, if not create
     const combinedId =
