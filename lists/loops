@@ -3,3 +3,8 @@ traversing an array / list
 for (var i = 0; i < xs.length; i++) { console.log(xs[i]); }
 xs.forEach((x, i) => console.log(x));
 for (const x of xs) { console.log(x); }
+
+//map
+monthlyRevenueArray.map(item =>  {
+    monthlyRevenueObject[item?._id] = item?.revenue_amount
+} )
