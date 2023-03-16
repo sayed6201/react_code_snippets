@@ -1,5 +1,5 @@
 // =========================================
-// Capturing Snapsot-realtime updates
+// Capturing Snapshot-realtime updates
 // =========================================
 import { db } from "../firebase";
 
